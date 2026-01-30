@@ -2,6 +2,7 @@
 
 import { use } from "react"
 import Link from "next/link"
+import { useParams } from "next/navigation"
 import { AppSidebar } from "@/components/messaging/app-sidebar"
 import { ApplicationStatusBadge, MessageStatusBadge, ChannelBadge } from "@/components/messaging/status-badge"
 import { messagingStore } from "@/lib/messaging/store"
@@ -42,8 +43,8 @@ const statusOptions: ApplicationStatus[] = [
   "completed",
 ]
 
-export default function ApplicationDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params)
+export default function ApplicationDetailPage() {
+  const { id } = useParams<{ id: string }>()
   const application = messagingStore.getApplication(id)
   const messageLogs = messagingStore.getMessageLogsForApplication(id)
   const staff = messagingStore.getStaff()
