@@ -34,7 +34,7 @@ export default function DashboardPage() {
             <div>
               <h1 className="text-2xl font-semibold text-foreground">Dashboard</h1>
               <p className="text-sm text-muted-foreground">
-                NatWest Onboarding Messaging Hub - Overview and quick actions
+                Onboarding Messaging Hub - Overview and quick actions
               </p>
             </div>
             <Link href="/send">

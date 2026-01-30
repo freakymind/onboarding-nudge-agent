@@ -130,7 +130,7 @@ function SendMessageContent() {
       "{{status}}": selectedApplication.status,
       "{{current_stage}}": selectedApplication.currentStage,
       "{{deadline}}": new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toLocaleDateString(),
-      "{{support_email}}": "support@natwest.com",
+      "{{support_email}}": "support@company.com",
       "{{support_phone}}": "0800 123 4567",
     }
 
