@@ -2,6 +2,7 @@
 
 import { use } from "react"
 import Link from "next/link"
+import { useParams } from "next/navigation"
 import { AppSidebar } from "@/components/messaging/app-sidebar"
 import { ApplicationStatusBadge, MessageStatusBadge, ChannelBadge } from "@/components/messaging/status-badge"
 import { messagingStore } from "@/lib/messaging/store"
@@ -42,8 +43,8 @@ const statusOptions: ApplicationStatus[] = [
   "completed",
 ]
 
-export default function ApplicationDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params)
+export default function ApplicationDetailPage() {
+  const { id } = useParams<{ id: string }>()
   const application = messagingStore.getApplication(id)
   const messageLogs = messagingStore.getMessageLogsForApplication(id)
   const staff = messagingStore.getStaff()
@@ -112,9 +113,11 @@ export default function ApplicationDetailPage({ params }: { params: Promise<{ id
                   ))}
                 </SelectContent>
               </Select>
-              <Button>
-                <Send className="mr-2 h-4 w-4" />
-                Send Message
+              <Button asChild className="bg-[#D71C2B] hover:bg-[#EE2033]">
+                <Link href={`/send?application=${id}`}>
+                  <Send className="mr-2 h-4 w-4" />
+                  Send Message
+                </Link>
               </Button>
             </div>
           </div>
