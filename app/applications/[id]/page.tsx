@@ -112,9 +112,11 @@ export default function ApplicationDetailPage({ params }: { params: Promise<{ id
                   ))}
                 </SelectContent>
               </Select>
-              <Button>
-                <Send className="mr-2 h-4 w-4" />
-                Send Message
+              <Button asChild className="bg-[#D71C2B] hover:bg-[#EE2033]">
+                <Link href={`/send?application=${id}`}>
+                  <Send className="mr-2 h-4 w-4" />
+                  Send Message
+                </Link>
               </Button>
             </div>
           </div>

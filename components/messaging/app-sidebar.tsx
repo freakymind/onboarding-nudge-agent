@@ -13,16 +13,20 @@ import {
   FolderKanban,
   BarChart3,
   Settings,
+  Send,
+  ArrowUpCircle,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: LayoutDashboard },
+  { name: "Send Message", href: "/send", icon: Send, highlight: true },
   { name: "Events", href: "/events", icon: Zap },
   { name: "Channels", href: "/channels", icon: Radio },
   { name: "Routing Rules", href: "/routing", icon: Route },
   { name: "Templates", href: "/templates", icon: FileText },
   { name: "Staff & Roles", href: "/staff", icon: Users },
+  { name: "Escalation", href: "/escalation", icon: ArrowUpCircle },
   { name: "Message Logs", href: "/logs", icon: History },
   { name: "Applications", href: "/applications", icon: FolderKanban },
   { name: "Analytics", href: "/analytics", icon: BarChart3 },
@@ -32,18 +36,19 @@ export function AppSidebar() {
   const pathname = usePathname()
 
   return (
-    <aside className="flex h-screen w-64 flex-col border-r border-border bg-card">
-      <div className="flex h-16 items-center border-b border-border px-6">
+    <aside className="flex h-screen w-64 flex-col bg-sidebar text-sidebar-foreground">
+      <div className="flex h-16 items-center border-b border-sidebar-border px-6">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-            <Zap className="h-4 w-4 text-primary-foreground" />
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white">
+            <Zap className="h-4 w-4 text-[#401664]" />
           </div>
-          <span className="text-lg font-semibold text-foreground">Messaging Hub</span>
+          <span className="text-lg font-semibold text-white">NatWest Onboard</span>
         </Link>
       </div>
       <nav className="flex-1 space-y-1 p-4">
         {navigation.map((item) => {
           const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
+          const isHighlight = "highlight" in item && item.highlight
           return (
             <Link
               key={item.name}
@@ -51,8 +56,10 @@ export function AppSidebar() {
               className={cn(
                 "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                 isActive
-                  ? "bg-primary text-primary-foreground"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                  ? "bg-white text-[#401664]"
+                  : isHighlight
+                    ? "bg-[#D71C2B] text-white hover:bg-[#EE2033]"
+                    : "text-white/80 hover:bg-sidebar-accent hover:text-white"
               )}
             >
               <item.icon className="h-4 w-4" />
@@ -61,10 +68,10 @@ export function AppSidebar() {
           )
         })}
       </nav>
-      <div className="border-t border-border p-4">
+      <div className="border-t border-sidebar-border p-4">
         <Link
           href="/settings"
-          className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+          className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-sidebar-accent hover:text-white"
         >
           <Settings className="h-4 w-4" />
           Settings

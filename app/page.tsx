@@ -12,7 +12,10 @@ import {
   Reply,
   Radio,
   Zap,
+  ArrowRight,
 } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function DashboardPage() {
   const stats = messagingStore.getDashboardStats()
@@ -27,10 +30,21 @@ export default function DashboardPage() {
       <AppSidebar />
       <main className="flex-1 overflow-auto">
         <div className="border-b border-border bg-card px-8 py-6">
-          <h1 className="text-2xl font-bold text-foreground">Dashboard</h1>
-          <p className="text-sm text-muted-foreground">
-            Onboarding messaging system overview and quick actions
-          </p>
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl font-semibold text-foreground">Dashboard</h1>
+              <p className="text-sm text-muted-foreground">
+                NatWest Onboarding Messaging Hub - Overview and quick actions
+              </p>
+            </div>
+            <Link href="/send">
+              <Button className="bg-[#D71C2B] hover:bg-[#EE2033]">
+                <Send className="mr-2 h-4 w-4" />
+                Send Message
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
         </div>
         <div className="p-8">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
