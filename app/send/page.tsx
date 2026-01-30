@@ -81,7 +81,7 @@ function SendMessageContent() {
   const channels = messagingStore.getChannels()
   const templates = messagingStore.getTemplates()
   const events = messagingStore.getEvents()
-  const staffMembers = messagingStore.getStaffMembers()
+  const staffMembers = messagingStore.getStaff()
 
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedApplication, setSelectedApplication] = useState<Application | null>(() => {
