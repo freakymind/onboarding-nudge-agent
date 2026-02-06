@@ -38,7 +38,7 @@ export default function DashboardPage() {
               </p>
             </div>
             <Link href="/send">
-              <Button className="bg-[#D71C2B] hover:bg-[#EE2033]">
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">
                 <Send className="mr-2 h-4 w-4" />
                 Send Message
                 <ArrowRight className="ml-2 h-4 w-4" />

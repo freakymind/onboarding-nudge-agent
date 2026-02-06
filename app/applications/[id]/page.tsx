@@ -113,7 +113,7 @@ export default function ApplicationDetailPage() {
                   ))}
                 </SelectContent>
               </Select>
-              <Button asChild className="bg-[#D71C2B] hover:bg-[#EE2033]">
+              <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
                 <Link href={`/send?application=${id}`}>
                   <Send className="mr-2 h-4 w-4" />
                   Send Message
