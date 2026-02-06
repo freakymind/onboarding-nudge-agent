@@ -39,10 +39,10 @@ export function AppSidebar() {
     <aside className="flex h-screen w-64 flex-col bg-sidebar text-sidebar-foreground">
       <div className="flex h-16 items-center border-b border-sidebar-border px-6">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white">
-            <Zap className="h-4 w-4 text-[#401664]" />
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sidebar-primary">
+            <Zap className="h-4 w-4 text-sidebar-primary-foreground" />
           </div>
-          <span className="text-lg font-semibold text-white">Onboard Hub</span>
+          <span className="text-lg font-semibold text-sidebar-foreground">Onboard Hub</span>
         </Link>
       </div>
       <nav className="flex-1 space-y-1 p-4">
@@ -56,10 +56,10 @@ export function AppSidebar() {
               className={cn(
                 "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                 isActive
-                  ? "bg-white text-[#401664]"
+                  ? "bg-sidebar-primary text-sidebar-primary-foreground"
                   : isHighlight
-                    ? "bg-[#D71C2B] text-white hover:bg-[#EE2033]"
-                    : "text-white/80 hover:bg-sidebar-accent hover:text-white"
+                    ? "bg-accent text-accent-foreground hover:bg-accent/90"
+                    : "text-sidebar-foreground/80 hover:bg-sidebar-accent hover:text-sidebar-foreground"
               )}
             >
               <item.icon className="h-4 w-4" />
@@ -71,7 +71,7 @@ export function AppSidebar() {
       <div className="border-t border-sidebar-border p-4">
         <Link
           href="/settings"
-          className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-sidebar-accent hover:text-white"
+          className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-sidebar-foreground/70 transition-colors hover:bg-sidebar-accent hover:text-sidebar-foreground"
         >
           <Settings className="h-4 w-4" />
           Settings
