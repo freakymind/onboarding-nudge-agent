@@ -1,0 +1,150 @@
+================================================================================
+ONBOARDING MESSAGING & NUDGE SYSTEM — PROBLEM STATEMENT
+================================================================================
+
+
+1. THE PROBLEM
+--------------------------------------------------------------------------------
+
+Customer and business onboarding in financial services is a multi-step,
+document-heavy process that routinely stalls. Applications sit idle for days
+or weeks because:
+
+  a) Customers do not know what is expected of them next.
+     They submit an application and then hear nothing. Required documents,
+     identity checks, or signatures are requested once via email and forgotten.
+     Without timely, repeated, channel-appropriate reminders the customer
+     disengages and the application decays.
+
+  b) Internal operations staff lose visibility of stuck applications.
+     Case officers manage large queues. When an application requires a manual
+     review, an approval, or an outbound call, it can be buried under newer
+     work. There is no systematic way to alert the right person at the right
+     time that an application needs attention.
+
+  c) Communication is fragmented across channels.
+     Some customers respond to email, others to SMS, others to WhatsApp or
+     Teams messages. Today there is no unified orchestration layer that
+     decides which channel to use, falls back to an alternative when there
+     is no response, and keeps a single audit trail of every interaction.
+
+  d) There is no closed-loop feedback.
+     Messages are sent but the system does not track whether the customer
+     acted on them. There is no mechanism to automatically check application
+     progress after a nudge is sent and to escalate if the application
+     remains stalled.
+
+  e) Escalation is manual and inconsistent.
+     When a customer does not respond to an initial outreach, it is left to
+     individual staff to remember to follow up. There are no configurable
+     rules that say "if no response via email within 48 hours, send an SMS;
+     if still no response after 72 hours, escalate to a phone call."
+
+The cumulative effect is longer onboarding times, higher drop-off rates,
+increased operational cost, regulatory risk from incomplete KYC/AML checks,
+and a poor customer experience that damages brand trust.
+
+
+2. WHAT THIS SYSTEM SOLVES
+--------------------------------------------------------------------------------
+
+The Onboarding Messaging & Nudge System is a centralised orchestration
+platform that automates, tracks, and optimises every communication sent
+during the onboarding lifecycle — to customers and to internal staff.
+
+It addresses each failure mode above:
+
+  Problem (a) — Customer silence
+  > The system maps every onboarding event (application submitted, document
+  > pending, review complete, etc.) to one or more outbound messages. Each
+  > message is sent via the most appropriate channel, using a pre-approved
+  > template with dynamic personalisation. The customer always knows what
+  > to do next.
+
+  Problem (b) — Internal staff blind spots
+  > Role-based notification routing ensures that the right operations staff
+  > are alerted when an application reaches a stage that requires their
+  > input. Notifications are targeted by role (Ops Manager, Reviewer,
+  > Compliance Officer) so that no application falls through the cracks.
+
+  Problem (c) — Channel fragmentation
+  > A unified routing engine supports SMS, Email, Microsoft Teams, and
+  > WhatsApp from a single configuration interface. Routing rules define
+  > which events trigger which channels, with conditions based on
+  > application type, customer segment, time of day, and prior response
+  > history.
+
+  Problem (d) — No closed-loop tracking
+  > Every message is logged with full delivery and response metadata.
+  > The system continuously ingests application status updates from the
+  > upstream onboarding platform and correlates them with sent messages
+  > to determine whether a nudge was effective.
+
+  Problem (e) — Manual, inconsistent escalation
+  > Configurable escalation chains define automatic fallback behaviour.
+  > If a customer does not respond to an email within N days, the system
+  > automatically sends an SMS. If there is still no response, it
+  > escalates to the next channel in the chain — without any manual
+  > intervention.
+
+  Ad-hoc messaging
+  > Operations staff can also send manual messages at any time by
+  > selecting an application, choosing a channel, and picking a template.
+  > These ad-hoc messages are logged alongside automated ones for a
+  > complete audit trail.
+
+
+3. KEY BENEFITS
+--------------------------------------------------------------------------------
+
+  Faster onboarding completion
+    Automated, timely nudges reduce the average time from application
+    submission to completion. Customers are prompted to act before they
+    disengage.
+
+  Lower drop-off rates
+    Multi-channel escalation ensures that customers are reached on the
+    channel they are most likely to respond to, reducing abandonment.
+
+  Reduced operational overhead
+    Staff no longer need to manually track which customers need follow-up
+    or remember to switch channels. The system handles sequencing, timing,
+    and escalation automatically.
+
+  Complete audit trail
+    Every message — automated or manual — is logged with timestamp,
+    channel, recipient, template used, delivery status, and response
+    status. This supports regulatory compliance and internal reporting.
+
+  Improved staff productivity
+    Role-based internal notifications surface the right work to the right
+    person. Staff spend less time searching for stalled applications and
+    more time progressing them.
+
+  Data-driven optimisation
+    Analytics dashboards expose channel performance, response rates by
+    event type, escalation frequency, and time-to-action metrics. Teams
+    can continuously refine their messaging strategy based on real data.
+
+  Configurable without code changes
+    Events, channels, routing rules, templates, staff roles, and
+    escalation chains are all managed through an administrative interface.
+    Business users can adapt the system to new products, regulatory
+    requirements, or process changes without developer involvement.
+
+  Consistent customer experience
+    Templates ensure that every customer receives clear, on-brand,
+    compliant communication regardless of which staff member or automated
+    process triggers the message.
+
+
+4. SUMMARY
+--------------------------------------------------------------------------------
+
+Onboarding fails when communication is late, inconsistent, or invisible.
+This system makes every onboarding communication timely, multi-channel,
+trackable, and automatically escalating — so that customers complete
+faster, staff work smarter, and the organisation retains full visibility
+and control over the process.
+
+================================================================================
